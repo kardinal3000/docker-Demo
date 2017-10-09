@@ -12,8 +12,8 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/kardinal3000/docker-example/', 'dockerhub') {
-       def app = docker.build("kardinal3000/docker-Demo", '.').push()
+     docker.withRegistry('https://hub.docker.com', 'dockerhub') {
+       def app = docker.build("kardinal3000/docker-example", '.').push()
      }
    }
 }
